@@ -1,0 +1,19 @@
+[package]
+name = "ch-adapter-claude-code"
+description = "Claude Code Adapter：读取 ~/.claude 的 JSONL 会话（plan §10.5）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-normalization = { path = "../normalization" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+time.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

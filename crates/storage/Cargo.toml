@@ -1,0 +1,21 @@
+[package]
+name = "ch-storage"
+description = "Conversation Hub SQLite 存储层（Migration + Repository）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+time.workspace = true
+uuid.workspace = true
+tracing.workspace = true
+# bundled 避免对系统 libsqlite3 的依赖，保证 WAL/FTS5 可用
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+[dev-dependencies]
+tempfile = "3"

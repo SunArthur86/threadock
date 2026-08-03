@@ -1,0 +1,47 @@
+[package]
+name = "conversation-hub-desktop"
+version = "0.1.0"
+description = "Conversation Hub 桌面应用"
+edition = "2021"
+rust-version = "1.75"
+
+[lib]
+name = "conversation_hub_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "conversation-hub-desktop"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = [] }
+tauri-plugin-opener = "2.0"
+tauri-plugin-dialog = "2.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+time = "0.3"
+ch-storage = { path = "../../../crates/storage" }
+ch-domain = { path = "../../../crates/domain" }
+ch-search = { path = "../../../crates/search" }
+ch-daemon = { path = "../../../crates/daemon" }
+ch-raw-store = { path = "../../../crates/raw-store" }
+ch-identity-resolver = { path = "../../../crates/identity-resolver" }
+ch-normalization = { path = "../../../crates/normalization" }
+ch-adapter-markdown = { path = "../../../crates/adapter-markdown" }
+ch-adapter-jsonl = { path = "../../../crates/adapter-jsonl" }
+ch-adapter-claude-code = { path = "../../../crates/adapter-claude-code" }
+ch-adapter-zcode = { path = "../../../crates/adapter-zcode" }
+ch-adapter-cursor = { path = "../../../crates/adapter-cursor" }
+ch-adapter-minimax = { path = "../../../crates/adapter-minimax" }
+ch-knowledge = { path = "../../../crates/knowledge" }
+ch-export = { path = "../../../crates/export" }
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+
+# 独立于主 Rust workspace（Tauri 依赖较重，单独管理）
+[workspace]

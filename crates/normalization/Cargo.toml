@@ -1,0 +1,19 @@
+[package]
+name = "ch-normalization"
+description = "Conversation Hub 标准化流水线（内容 hash + 幂等 + 完整度评分）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+time.workspace = true
+blake3.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+# 无额外依赖

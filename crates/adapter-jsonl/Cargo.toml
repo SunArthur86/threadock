@@ -1,0 +1,19 @@
+[package]
+name = "ch-adapter-jsonl"
+description = "通用 JSONL Adapter：每行一个 JSON 对象，解析为 RawConversation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-sdk = { path = "../adapter-sdk" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

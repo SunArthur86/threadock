@@ -1,0 +1,35 @@
+[package]
+name = "ch-cli"
+description = "Conversation Hub 命令行：导入 / 查询（端到端链路验证）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "ch"
+path = "src/main.rs"
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-storage = { path = "../storage" }
+ch-raw-store = { path = "../raw-store" }
+ch-identity-resolver = { path = "../identity-resolver" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-markdown = { path = "../adapter-markdown" }
+ch-adapter-jsonl = { path = "../adapter-jsonl" }
+ch-adapter-claude-code = { path = "../adapter-claude-code" }
+ch-adapter-zcode = { path = "../adapter-zcode" }
+ch-export = { path = "../export" }
+ch-backup = { path = "../backup" }
+ch-search = { path = "../search" }
+ch-daemon = { path = "../daemon" }
+ch-knowledge = { path = "../knowledge" }
+anyhow.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+serde_json.workspace = true

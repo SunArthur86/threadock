@@ -1,0 +1,21 @@
+[package]
+name = "ch-adapter-host"
+description = "Conversation Hub Adapter Host：隔离子进程调度（plan §10.4）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-sdk = { path = "../adapter-sdk" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+# 集成测试需要找到 workspace target 目录下的 adapter 二进制
+cargo_metadata = "0.18"

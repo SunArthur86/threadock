@@ -1,0 +1,35 @@
+[package]
+name = "ch-daemon"
+description = "Conversation Hub 本地常驻服务（plan §8.2/§16，JSON-RPC over stdio）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "ch_daemon"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ch-daemon"
+path = "src/main.rs"
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-storage = { path = "../storage" }
+ch-search = { path = "../search" }
+ch-raw-store = { path = "../raw-store" }
+ch-identity-resolver = { path = "../identity-resolver" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-markdown = { path = "../adapter-markdown" }
+ch-adapter-jsonl = { path = "../adapter-jsonl" }
+ch-knowledge = { path = "../knowledge" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tempfile = "3"
+
+[dev-dependencies]
+serde_json.workspace = true

@@ -1,0 +1,19 @@
+[package]
+name = "ch-knowledge"
+description = "Conversation Hub 知识提取（plan §13.5：摘要/决策/TODO/错误/命令）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-normalization = { path = "../normalization" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+regex = "1"
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

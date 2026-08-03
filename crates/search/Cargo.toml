@@ -1,0 +1,18 @@
+[package]
+name = "ch-search"
+description = "Conversation Hub Tantivy 全文检索（plan §9.5/§13）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tantivy.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

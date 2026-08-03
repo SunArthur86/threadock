@@ -1,0 +1,14 @@
+[package]
+name = "ch-identity-resolver"
+description = "Conversation Hub Workspace 身份解析（plan §4.3 七级合并优先级）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+thiserror.workspace = true
+
+[dev-dependencies]
+# 无额外依赖，全部用 domain 内建类型

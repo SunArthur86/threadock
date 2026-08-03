@@ -1,0 +1,22 @@
+# Rust 构建产物
+/target
+/apps/desktop/src-tauri/target
+
+# 前端
+node_modules/
+dist/
+apps/desktop/dist/
+
+# 本地数据库与备份（运行时生成）
+*.db
+*.db-wal
+*.db-shm
+*.chbak
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+

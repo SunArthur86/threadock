@@ -1,0 +1,22 @@
+[package]
+name = "ch-backup"
+description = "Conversation Hub 本地加密备份/恢复（plan §6.6）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-storage = { path = "../storage" }
+ch-raw-store = { path = "../raw-store" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+zstd.workspace = true
+chacha20poly1305.workspace = true
+blake3.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+ch-domain = { path = "../domain" }

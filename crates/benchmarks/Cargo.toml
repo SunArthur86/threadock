@@ -1,0 +1,17 @@
+[package]
+name = "ch-benchmarks"
+description = "Conversation Hub 性能基准（plan §7.2）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-storage = { path = "../storage" }
+ch-search = { path = "../search" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-markdown = { path = "../adapter-markdown" }
+
+[dev-dependencies]
+tempfile = "3"

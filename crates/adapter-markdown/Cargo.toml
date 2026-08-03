@@ -1,0 +1,28 @@
+[package]
+name = "ch-adapter-markdown"
+description = "通用 Markdown Adapter：把导出的会话 Markdown 解析为 RawConversation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "ch_adapter_markdown"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ch-adapter-markdown"
+path = "src/main.rs"
+
+[dependencies]
+ch-domain = { path = "../domain" }
+ch-normalization = { path = "../normalization" }
+ch-adapter-sdk = { path = "../adapter-sdk" }
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+time.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
