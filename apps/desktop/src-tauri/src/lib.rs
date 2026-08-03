@@ -532,10 +532,10 @@ fn auto_sync(
 
     let home = std::env::var("HOME").map_err(|_| "no HOME")?;
 
-    // ZCode
+    // ZCode：discover_all 返回主任务 + 子任务（子任务带 source_parent_id）
     let zcode_db = format!("{home}/.zcode/cli/db/db.sqlite");
     if std::path::Path::new(&zcode_db).exists() {
-        match ch_adapter_zcode::discover_sessions(&zcode_db) {
+        match ch_adapter_zcode::discover_all_sessions(&zcode_db) {
             Ok(sessions) => {
                 for s in sessions.into_iter().take(lim) {
                     // 跳过已导入的（幂等检查）
